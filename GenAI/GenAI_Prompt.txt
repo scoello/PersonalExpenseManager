@@ -1,0 +1,36 @@
+Generate a complete RESTful API for a task management system using C#, Minimal WebAPI, EntityFramework, SQL Server and xUnit.
+
+Requirements:
+
+Implement CRUD operations for tasks:
+Create a task
+List tasks belonging to the authenticated user
+Retrieve a single task
+Update a task, including partial updates
+Delete a task
+
+•	Assume a basic User model and authentication system already exist.
+•	Each task must contain:
+id: UUID
+title: required string, 1–200 characters
+description: optional text
+status: enum with pending, in_progress, and completed
+due_date: optional timezone-aware datetime
+user_id: foreign key referencing the task owner
+created_at and updated_at: timezone-aware timestamps
+
+•	Expose these endpoints:
+POST /api/v1/tasks
+GET /api/v1/tasks
+GET /api/v1/tasks/{task_id}
+DELETE /api/v1/tasks/{task_id}
+
+•	Support pagination and optional filtering by status and due date on the list endpoint.
+•	Obtain the current user through an existing get_current_user dependency.
+•	Ensure users can access, update, and delete only their own tasks.
+•	Use appropriate HTTP status codes and consistent JSON error responses.
+•	Validate all request data and return 404 when a task does not exist or is not owned by the current user.
+•	Organize the implementation into clear modules for models, schemas, routes, services, database configuration, and dependencies.
+•	Include unit and integration tests with xUnit, covering successful operations, validation failures, missing tasks, ownership enforcement, filters, and pagination.
+•	Include a Dockerfile, docker-compose.yml, .env.example, dependency file, and concise README with setup, migration, testing, and API usage instructions.
+•	Add OpenAPI documentation and example request/response payloads.

@@ -10,7 +10,7 @@ public sealed class UpdateTaskRequestJsonConverter : JsonConverter<UpdateTaskReq
         var root = doc.RootElement;
         return new UpdateTaskRequest {
             Title = Read<string>(root, "title", options), Description = Read<string>(root, "description", options),
-            Status = Read<TaskStatus?>(root, "status", options), DueDate = Read<TaskStatus?>(root, "status", options) is not null ? Read<DateTimeOffset?>(root, "due_date", options) : Read<DateTimeOffset?>(root, "due_date", options),
+            Status = Read<TaskStatus?>(root, "status", options), DueDate = Read<DateTimeOffset?>(root, "due_date", options),
             SuppliedProperties = root.EnumerateObject().Select(x => x.Name.Replace("_", "", StringComparison.Ordinal)).ToHashSet(StringComparer.OrdinalIgnoreCase)
         };
     }
