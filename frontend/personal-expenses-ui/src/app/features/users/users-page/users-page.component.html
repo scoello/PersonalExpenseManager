@@ -1,0 +1,7 @@
+<section>
+  <div class="heading"><div><p class="eyebrow">ADMINISTRATION</p><h1>Users</h1><p class="muted">Create accounts that can manage their own expenses.</p></div></div>
+  <p class="error" role="alert" *ngIf="errorMessage()">{{ errorMessage() }}</p>
+  <app-user-form [submitting]="submitting()" (submitted)="createUser($event)" />
+  <p class="empty" *ngIf="loading()">Loading users...</p>
+  <app-user-list *ngIf="!loading()" [users]="users()" />
+</section>

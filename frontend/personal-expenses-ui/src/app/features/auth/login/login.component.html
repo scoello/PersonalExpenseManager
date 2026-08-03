@@ -1,0 +1,12 @@
+<main class="center">
+  <form class="card login" (ngSubmit)="login()">
+    <p class="eyebrow">PERSONAL FINANCE</p>
+    <h1>Welcome back</h1>
+    <p class="muted">Sign in to manage your expenses.</p>
+    <label>Username<input [(ngModel)]="username" name="username" required autofocus></label>
+    <label>Password<input [(ngModel)]="password" name="password" type="password" required></label>
+    <p class="error" role="alert" *ngIf="errorMessage">{{ errorMessage }}</p>
+    <button [disabled]="submitting">{{ submitting ? 'Signing in...' : 'Sign in' }}</button>
+    <small>Demo administrator: admin / Admin123!</small>
+  </form>
+</main>

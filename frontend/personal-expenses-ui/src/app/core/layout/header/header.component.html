@@ -1,0 +1,11 @@
+<header>
+  <a class="brand" routerLink="/expenses"><span>$</span> Pennywise</a>
+  <nav aria-label="Main navigation">
+    <a routerLink="/expenses" routerLinkActive="active">Expenses</a>
+    <a *ngIf="auth.session()?.role === 'Admin'" routerLink="/users" routerLinkActive="active">Users</a>
+  </nav>
+  <div class="account">
+    <span>{{ auth.session()?.username }}</span>
+    <button type="button" class="secondary" (click)="auth.logout()">Log out</button>
+  </div>
+</header>

@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/database/">
+    <Project Path="database/PersonalExpenses.Database/PersonalExpenses.Database.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/PersonalExpenses.Api/PersonalExpenses.Api.csproj" />
+    <Project Path="src/PersonalExpenses.Application/PersonalExpenses.Application.csproj" />
+    <Project Path="src/PersonalExpenses.Domain/PersonalExpenses.Domain.csproj" />
+    <Project Path="src/PersonalExpenses.Infrastructure/PersonalExpenses.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PersonalExpenses.IntegrationTests/PersonalExpenses.IntegrationTests.csproj" />
+    <Project Path="tests/PersonalExpenses.UnitTests/PersonalExpenses.UnitTests.csproj" />
+  </Folder>
+</Solution>

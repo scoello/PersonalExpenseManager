@@ -1,0 +1,5 @@
+<form class="card form-grid user-form" (ngSubmit)="submit()">
+  <label>Username<input [(ngModel)]="username" name="username" required></label>
+  <label>Temporary password<input type="password" minlength="8" [(ngModel)]="password" name="password" required></label>
+  <div class="actions"><button [disabled]="submitting">{{ submitting ? 'Creating...' : 'Create user' }}</button></div>
+</form>

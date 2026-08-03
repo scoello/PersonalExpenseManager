@@ -1,0 +1,18 @@
+<section>
+  <div class="heading">
+    <div><p class="eyebrow">OVERVIEW</p><h1>Personal expenses</h1><p class="muted">Track where your money goes.</p></div>
+    <div class="total"><span>Total spending</span><strong>{{ total() | currency }}</strong></div>
+  </div>
+  <p class="error" role="alert" *ngIf="errorMessage()">{{ errorMessage() }}</p>
+  <app-expense-form
+    [expense]="selectedExpense()"
+    [submitting]="submitting()"
+    (submitted)="save($event)"
+    (cancelled)="selectedExpense.set(null)" />
+  <p class="empty" *ngIf="loading()">Loading expenses...</p>
+  <app-expense-list
+    *ngIf="!loading()"
+    [expenses]="expenses()"
+    (editRequested)="selectedExpense.set($event)"
+    (deleteRequested)="requestDelete($event)" />
+</section>

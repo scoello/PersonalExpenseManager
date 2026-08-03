@@ -1,0 +1,4 @@
+<div class="card table-card"><table><thead><tr><th>Username</th><th>Role</th></tr></thead><tbody>
+  <tr *ngFor="let user of users; trackBy: trackById"><td>{{ user.username }}</td><td><span class="pill">{{ user.role }}</span></td></tr>
+  <tr *ngIf="!users.length"><td colspan="2" class="empty">No users found.</td></tr>
+</tbody></table></div>
